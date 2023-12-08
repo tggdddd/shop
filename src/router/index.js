@@ -1,5 +1,4 @@
 import {createRouter, createWebHashHistory} from "vue-router"
-import Layout from "@/components/layout/Index.vue"
 import {useCookies} from "vue3-cookies";
 
 const routes = []
@@ -21,7 +20,7 @@ const router = createRouter({
         {
             path: "/home",
             name: "home",
-            component: () => import("@/components/Home.vue"),
+            component: import("@/components/Home.vue"),
             meta: {
                 menu: true,
                 title: "首页",
@@ -31,7 +30,7 @@ const router = createRouter({
         {
             path: "/category",
             name: "category",
-            component: () => import("@/components/product/Category.vue"),
+            component: import("@/components/product/Category.vue"),
             meta: {
                 menu: true,
                 title: "分类",
@@ -42,7 +41,7 @@ const router = createRouter({
             path: "/category/:id",
             name: "category.detail",
             props:true,
-            component: () => import("@/components/product/CategoryDetail.vue"),
+            component: import("@/components/product/CategoryDetail.vue"),
             meta: {
 
             }
@@ -50,7 +49,7 @@ const router = createRouter({
         {
             path: "/cart",
             name: "cart",
-            component: () => import("@/components/product/Cart.vue"),
+            component: import("@/components/product/Cart.vue"),
             meta: {
                 menu: true,
                 title: "购物车",

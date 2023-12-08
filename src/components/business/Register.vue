@@ -37,7 +37,8 @@ const onSubmit = function (values) {
             round
             width="120"
             height="120"
-            src="/assets/images/pexels-spencer-selover-428364.jpg"
+            fit="contain"
+            src="/assets/images/avatar.png"
             :style="{margin: '0 auto',marginBottom: '65px'   , left: 'calc(50% - 60px)'}"
         />
         <div class="wrap-input100 validate-input">
@@ -62,7 +63,7 @@ const onSubmit = function (values) {
           />
         </div>
         <div class="container-login100-form-btn">
-          <van-button color="#333333" block round native-type="submit"
+          <van-button block color="rgb(239 230 128)" native-type="submit" round
                       :style="{marginBottom: '20px'}">
             注册
           </van-button>
@@ -112,7 +113,8 @@ const onSubmit = function (values) {
 .txt1 {
   font-family: Montserrat-Regular;
   font-size: 16px;
-  color: #082a81;
+
+  color: #4f8108;
   line-height: 1.4;
   text-decoration: none;
   font-weight: bold;

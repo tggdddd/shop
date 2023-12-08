@@ -3,7 +3,7 @@ const children = [
         path: "detail/:id",
         props:true,
         name: "product.detail",
-        component: () => import("@/components/product/Detail.vue"),
+        component: import("@/components/product/Detail.vue"),
         meta: {
             // menu: false,
             // title: "商品",

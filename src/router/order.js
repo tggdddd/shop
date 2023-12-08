@@ -3,7 +3,7 @@ const children = [
         path: "confirm/:id",
         props:true,
         name: "order.confirm",
-        component: () => import("@/components/order/OrderConfirm.vue"),
+        component: import("@/components/order/OrderConfirm.vue"),
         meta: {
             // menu: false,
             title: "确认订单",
@@ -15,7 +15,7 @@ const children = [
         path: "express/:id",
         props:true,
         name: "order.express",
-        component: () => import("@/components/order/ExpressDetail.vue"),
+        component: import("@/components/order/ExpressDetail.vue"),
         meta: {
             // menu: false,
             title: "物流信息",
@@ -27,7 +27,7 @@ const children = [
         path: "return/:id",
         props:true,
         name: "order.return",
-        component: () => import("@/components/order/Return.vue"),
+        component: import("@/components/order/Return.vue"),
         meta: {
             // menu: false,
             title: "退货退款",

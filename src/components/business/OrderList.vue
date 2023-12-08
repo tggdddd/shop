@@ -1,5 +1,5 @@
 <script setup>
-import {computed, reactive, ref} from "vue";
+import {reactive, ref} from "vue";
 import Order from "@/components/comon/Order.vue";
 import {getBusinessOrdersApi} from "@/api/business.js";
 import router from "@/router/index.js";
@@ -104,13 +104,13 @@ function productsReduce(products) {
   for (let i = 0; i < products?.length; i++) {
     const res = products[i]
     const data = {
-      thumb: res.product.thumb,
-      name: res.product.name,
-      price: res.product.price,
+      thumb: res?.product?.thumb,
+      name: res?.product?.name,
+      price: res?.product?.price,
       num: res.pronum,
       contentBtn: "",
       click: () => {
-        router.push({name: "product.detail", params: {id: res.product.id}})
+        router.push({name: "product.detail", params: {id: res?.product?.id}})
       }
     }
     result.push(data)
@@ -240,7 +240,7 @@ function commentOrder(id) {
                   },
                   {
                       text:'查看物流',
-                    hidden: order.expresscoode&&order.expresscoode.length,
+                    hidden: order.expresscode==null||order.expresscode.length==0,
                     clickFn:()=>{shippingStatus(order.id)}
                   },
                   {
@@ -255,7 +255,7 @@ function commentOrder(id) {
                   },
                   {
                       text:'退货退款',
-                      hidden: [0,1].includes(Number.parseInt(order.status)),
+                      hidden: [0,1,-1].includes(Number.parseInt(order.status)),
                     clickFn:()=>{refundAndProduct(order.id)}
                   },
                   {
