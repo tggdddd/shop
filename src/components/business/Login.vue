@@ -34,11 +34,9 @@ const onSubmit = function (values) {
             round
             width="120"
             height="120"
-            fit="contain"
-            src="/assets/images/avatar.png"
+            src="/assets/images/pexels-spencer-selover-428364.jpg"
             :style="{margin: '0 auto',marginBottom: '65px'   , left: 'calc(50% - 60px)'}"
         />
-        <!--        src="/assets/images/pexels-spencer-selover-428364.jpg"-->
         <div class="wrap-input100 validate-input">
           <van-field
               v-model="formData.mobile"
@@ -61,7 +59,7 @@ const onSubmit = function (values) {
           />
         </div>
         <div class="container-login100-form-btn">
-          <van-button block color="rgb(239 230 128)" native-type="submit" round
+          <van-button block color="#333333" native-type="submit" round
                       :style="{marginBottom: '20px'}">
             登录
           </van-button>
@@ -111,8 +109,7 @@ const onSubmit = function (values) {
 .txt1 {
   font-family: Montserrat-Regular;
   font-size: 16px;
-
-  color: #4f8108;
+  color: #082a81;
   line-height: 1.4;
   text-decoration: none;
   font-weight: bold;

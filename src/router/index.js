@@ -1,6 +1,11 @@
 import {createRouter, createWebHashHistory} from "vue-router"
 import {useCookies} from "vue3-cookies";
 
+import Home from "@/components/Home.vue";
+import Category from "@/components/product/Category.vue";
+import CategoryDetail from "@/components/product/CategoryDetail.vue";
+import Cart from "@/components/product/Cart.vue";
+
 const routes = []
 const {cookies} = useCookies();
 const imports = import.meta.glob(["./**.js", "!./index.js"], {eager: true})
@@ -20,7 +25,7 @@ const router = createRouter({
         {
             path: "/home",
             name: "home",
-            component: import("@/components/Home.vue"),
+            component: Home,
             meta: {
                 menu: true,
                 title: "首页",
@@ -30,7 +35,7 @@ const router = createRouter({
         {
             path: "/category",
             name: "category",
-            component: import("@/components/product/Category.vue"),
+            component: Category,
             meta: {
                 menu: true,
                 title: "分类",
@@ -41,7 +46,7 @@ const router = createRouter({
             path: "/category/:id",
             name: "category.detail",
             props:true,
-            component: import("@/components/product/CategoryDetail.vue"),
+            component: CategoryDetail,
             meta: {
 
             }
@@ -49,7 +54,7 @@ const router = createRouter({
         {
             path: "/cart",
             name: "cart",
-            component: import("@/components/product/Cart.vue"),
+            component: Cart,
             meta: {
                 menu: true,
                 title: "购物车",

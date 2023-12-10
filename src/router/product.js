@@ -1,9 +1,11 @@
+import Detail from "@/components/product/Detail.vue";
+
 const children = [
     {
         path: "detail/:id",
         props:true,
         name: "product.detail",
-        component: import("@/components/product/Detail.vue"),
+        component: Detail,
         meta: {
             // menu: false,
             // title: "商品",

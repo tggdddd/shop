@@ -64,7 +64,7 @@ onMounted(() => {
       <!-- 分类 -->
       <van-grid :border="false">
         <van-grid-item v-for="item in category" :key="item.id" :to="'/category/'+item.id">
-          <van-image :src="item.thumb" fit="contain" height="60" round width="60">
+          <van-image :src="item.thumb" fit="cover" height="60" round width="60">
             <template v-slot:error>加载失败</template>
           </van-image>
           <p>{{ item.name }}</p>

@@ -88,7 +88,7 @@ function onSubmit() {
         left-arrow
         @click-left="$router.back()"
     />
-    <van-form style="margin-top:12px;" @submit="onSubmit">
+    <van-form @submit="onSubmit">
       <van-cell-group inset>
         <van-field
             name="avatar"
@@ -130,7 +130,7 @@ function onSubmit() {
         <van-field label="性别" name="sex">
           <template #input>
             <van-radio-group v-model="data.gender" direction="horizontal">
-              <!--              <van-radio name="0">保密</van-radio>-->
+              <van-radio name="0">保密</van-radio>
               <van-radio name="1">男</van-radio>
               <van-radio name="2">女</van-radio>
             </van-radio-group>
