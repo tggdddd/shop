@@ -8,7 +8,13 @@ onMounted(() => getUserInfoApi().then(
       data.value = res.data
     }
 ))
-onActivated(onMounted)
+onActivated(() => {
+  getUserInfoApi().then(
+      res => {
+        data.value = res.data
+      }
+  )
+})
 </script>
 
 <template>
