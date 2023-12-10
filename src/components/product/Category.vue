@@ -1,11 +1,12 @@
 <script setup>
 import {nextTick, onMounted, ref} from "vue";
 import {categoryApi} from "@/api/product.js";
-  const selectedIndex = ref()
-  const category = ref([])
 import "@/../public/assets/js/jquery-1.8.2.min.js";
 import "@/../public/assets/js/scrollTab.js";
 import router from "@/router/index.js";
+
+const selectedIndex = ref()
+  const category = ref([])
 onMounted(async ()=>{
   category.value = (await categoryApi()).data
   await nextTick(() => {
@@ -51,7 +52,15 @@ function more(id){
               </div>
                 <div class="aui-flex-links">
                   <van-grid :column-num="3" :border="false">
-                    <van-grid-item :to="'/product/detail/'+product.id" v-for="product in item.products" :key="product.id" :icon="product.thumb" :text="product.name" />
+                    <van-grid-item v-for="product in item.products" :key="product.id"
+                                   :icon="product.thumb" :to="'/product/detail/'+product.id">
+                      <template #text>
+                        <div
+                            style="display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;-webkit-box-lines: 2;-webkit-line-clamp: 2;-webkit-line-break: after-white-space">
+                          {{ product.name }}
+                        </div>
+                      </template>
+                    </van-grid-item>
                   </van-grid>
                 </div>
               </div>
