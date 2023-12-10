@@ -55,7 +55,7 @@ function more(id){
                     <van-grid-item v-for="product in item.products" :key="product.id"
                                    :icon="product.thumb" :to="'/product/detail/'+product.id">
                       <template #text>
-                        <div
+                        <div class="van-grid-item__text"
                             style="display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;-webkit-box-lines: 2;-webkit-line-clamp: 2;-webkit-line-break: after-white-space">
                           {{ product.name }}
                         </div>
